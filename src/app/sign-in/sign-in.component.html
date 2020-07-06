@@ -1,0 +1,16 @@
+<form>
+    <div style="margin-left: 17%;" class="form-group row">
+        <label class="col-lg-2 col-form-label form-control-label text-muted" >Email</label>
+            <div class="col-lg-10">
+                <input style="width: 46%;" class="form-control" name="email" type="text" [(ngModel)]="email">
+            </div>
+    </div>
+    <div style="margin-left: 17%;" class="form-group row">
+        <label class="col-lg-2 col-form-label form-control-label text-muted"> Password</label>
+            <div class="col-lg-10">
+                <input style="width: 46%;"class="form-control" name="password" type="text" [(ngModel)]="password">
+            </div>
+    </div>
+    <button (click)="Signin()" type="button" style="background-color: #563D7C;border-color:#563D7C;outline: none;    margin-left: 42%;" class="btn btn-primary mr-1">Sign In</button>
+    <p *ngIf="msg"class="alert alert-danger">{{msg}}</p>
+</form>

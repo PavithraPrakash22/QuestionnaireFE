@@ -1,0 +1,40 @@
+<nav style ="background-color:#4B0082 !important;" class="navbar navbar-expand-md navbar-dark bg-primary mb-2">
+	<a class="navbar-brand" href="#"></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarColor02">
+		<ul *ngIf="settok()==0" class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link" routerLink="signup">Sign Up</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" routerLink="signin">Sign In</a>
+			</li>
+		</ul>
+		<ul *ngIf="settok()!=0" class="navbar-nav ml-auto">
+				<li class="nav-item">
+						<a class="nav-link" routerLink="view">View</a>
+					</li>
+			<li class="nav-item">
+				<a class="nav-link" (click)="logout()">log Out</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+<p style="font-style: oblique;font-weight: bold;margin-left: 30%;">hello {{name}}... To take test Click <a routerLink="test">here!!!</a></p>
+<!-- <form (ngSubmit)="Add()" #form1="ngForm">
+	
+		<div class="col-lg-4" *ngFor="let product of products.questionnaire.questions;let i = index">
+			<label style="width: 301%;font-weight: bold" class="col-lg-500 col-form-label form-control-label text-muted">{{i+1}}. {{product.headline}}</label>	
+				<select class="form-control">
+					<option value="null">Select</option>
+					<option *ngFor="let option of product.choices; let i = index" value="option">
+						{{option.label}}
+					</option>
+				  </select>
+				  <br>
+		</div>	
+</form> -->
+
+<router-outlet></router-outlet>

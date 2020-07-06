@@ -1,0 +1,12 @@
+button:hover,button:active {
+    border-color: #563D7C;
+}
+button:focus,button:active {
+    outline: none !important;
+    box-shadow: none;
+  }
+  input:focus{
+      border-color:  #563D7C !important;
+      outline-color: #563D7C !important; 
+      
+  }

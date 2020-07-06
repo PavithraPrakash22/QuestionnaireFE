@@ -1,0 +1,30 @@
+<form style="padding: 5%;margin-left: 24%;width: 98%;" #myform="ngForm" (ngSubmit)="Add(myform)">
+
+    <div class="col-lg-4" *ngFor="let product of questions;let i = index ">
+        <!-- <div *ngIf="check(product.question_type);"> -->
+        <label style="width: 301%;font-weight: bold" class="col-lg-500 col-form-label form-control-label text-muted">{{i+1}}. {{product[i].headline}}</label>	
+            <div *ngIf="check(product[i].question_type);">
+                    <select class="form-control"  name="ans{{i}}" [ngModel]="product[i].description" ngDefaultControl>
+                            <option value="null">Select</option>
+                            <option *ngFor="let options of product[i].choices; let j = index;">
+                                {{options .label}}
+                                    
+                            </option>
+                            
+                          </select>
+                        
+            </div> 
+            <div *ngIf="!check(product[i].question_type);">
+                    <div class="form-group row">
+                            <div class="col-md-4">
+                                <input style="width: 454%;" class="form-control" type="text" name="ans{{i}}" [ngModel]="product[i].description" ngDefaultControl>
+                            </div>
+                    </div>
+            </div> 
+            <br>
+            <!-- </div> -->
+    </div>
+    
+    <button type="submit" style="background-color: #563D7C;border-color:#563D7C;outline: none; margin-left: 19%;" class="btn btn-primary mr-1">Submit</button>
+
+</form>
